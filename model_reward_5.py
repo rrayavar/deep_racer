@@ -22,17 +22,18 @@ def reward_function(params):
     # Initialize the reward with typical value
     step_reward = 0
     speed_reward = 0
-
+    
+    step_reward = 0
     # Give additional reward if the car pass every 100 steps faster than expected
     if (steps % 100) == 0 and progress > (steps / TOTAL_NUM_STEPS) * 100 :
         step_reward = 1.0
 
-    if -5 < steering_angle < 5:
+    if -5 < steering < 5:
         if speed > 2.5:
             speed_reward = 2.0
         elif speed > 2:
             speed_reward = 1.0
-    elif steering_angle < -15 or steering_angle > 15:
+    elif steering < -15 or steering > 15:
         if speed < 1.8:
             speed_reward = 1.0
         elif speed_reward > 2.2:
