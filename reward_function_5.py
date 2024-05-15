@@ -1,4 +1,4 @@
-    def reward_function(params):
+def reward_function(params):
     '''
     Example of rewarding the agent to follow center line
     '''
