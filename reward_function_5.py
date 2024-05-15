@@ -11,6 +11,7 @@ def reward_function(params):
     # Give higher reward if the car is closer to center line and vice versa
     distance_reward = 1- (distance_from_center/track_width*0.5)**0.4
 
+    # Penalize the good buddy when it steps off the track. Note: 2s loss for every step off. Significant issue. 
     if all_wheels_on_track and (0.5*track_width - distance_from_center) >= 0.05:
         wheel_reward = 1.0
     else:
